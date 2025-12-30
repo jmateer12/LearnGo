@@ -1,9 +1,12 @@
 package iteration
 
-import "testing"
+import (
+	"fmt"
+	"testing"
+)
 
 func TestRepeat(t *testing.T) {
-	repeated := Repeat("a")
+	repeated := Repeat("a", 5)
 	expected := "aaaaa"
 
 	if repeated != expected {
@@ -11,8 +14,24 @@ func TestRepeat(t *testing.T) {
 	}
 }
 
+func TestFullName(t *testing.T) {
+	created := FullName("Jon", "Mateer")
+	fullName := "Jon Mateer"
+
+	if created != fullName {
+		t.Errorf("expected %q but got %q", created, fullName)
+	}
+}
+
+func ExampleRepeat() {
+	chars := Repeat("a", 5)
+	fmt.Println(chars)
+	// Output: aaaaa
+}
+
 func BenchmarkRepeat(b *testing.B) {
 	for b.Loop() {
-		Repeat("a")
+		Repeat("a", 1)
+		FullName("Jon", "Mateer")
 	}
 }
