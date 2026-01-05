@@ -10,3 +10,5 @@ to test use go test or go test -v (for verbose)
 to benchmark a function use go test -bench="." can also add -benchmem (for memory stats)
 
 to check coverage of code use go test -cover
+
+A CRUD API is a Create Read Update Delete API (Application Programming Interface)
