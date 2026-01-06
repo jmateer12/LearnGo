@@ -12,3 +12,5 @@ to benchmark a function use go test -bench="." can also add -benchmem (for memor
 to check coverage of code use go test -cover
 
 A CRUD API is a Create Read Update Delete API (Application Programming Interface)
+
+Dependency Injection DI is a way to pass in dependencies into a function 
