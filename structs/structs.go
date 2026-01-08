@@ -19,7 +19,7 @@ type Employee struct {
 
 type Address struct {
 	Street string `json:"myStreet"`
-	City   string `json:"myCity`
+	City   string `json:"myCity"`
 }
 
 // To make this function a method of Employee we use the () at teh beginning to tell it to use the Employee struct
