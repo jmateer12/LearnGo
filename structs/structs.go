@@ -57,9 +57,9 @@ func main() {
 
 	// Printing to console the properties of employee1 struct
 	// structs have the advantage that they allows us to have random access of properties within them
-	fmt.Println("Employee name: ", employee1.Name)
+	fmt.Println("Employee name:", employee1.Name)
 	fmt.Println("Employee age:", employee1.Age)
-	fmt.Println("Is employee remote: ", employee1.IsRemote)
+	fmt.Println("Is employee remote:", employee1.IsRemote)
 
 	// Here we have an anonymous struct which is a struct without a name this can simplify struct usage if we don't want to reuse them
 	// One thing about anonymous structs is that they must be defined after being initialized using the second set of curly braces {}
