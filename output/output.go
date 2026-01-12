@@ -11,6 +11,7 @@ const (
 	Reset = "\033[0m"
 	Red   = "\033[31m"
 	Green = "\033[32m"
+	Pink  = "\033[1;35m"
 )
 
 func main() {
@@ -25,6 +26,7 @@ func main() {
 	// How to print to console using colors and constants
 	fmt.Println(Red + "This is Red" + Reset)
 	fmt.Println(Green + "This is Green" + Reset)
+	fmt.Println(Pink + "This is Pink" + Reset)
 
 	// How to print colors inline in golang
 	fmt.Println("\033[33;1mThis is bright yellow" + Reset)
