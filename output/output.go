@@ -1,9 +1,19 @@
 // https://www.youtube.com/watch?v=NvfSa3XwvE0 using this video for learning about outputting in golang
-// 10:13 in video
+// 14:17 in video
 
 package main
 
 import "fmt"
+
+var ErrUnder18 = fmt.Errorf("Under 18 Error")
+
+func validateAge(age int) error {
+	if age < 18 {
+		return fmt.Errorf("age: %d, (%w)", age, ErrUnder18)
+	}
+
+	return nil
+}
 
 const (
 	// 033 -> octal number (escape)
@@ -16,7 +26,15 @@ const (
 
 func main() {
 	name := "Pete"
-	age := 33
+	age := 17
+
+	// Sprintf should be used for formatting in code somewhere else and save printing information in a variable
+	information := fmt.Sprintf("Name: %s, Age: %d", name, age)
+	fmt.Println(information)
+
+	if err := validateAge(age); err != nil {
+		fmt.Println(err)
+	}
 
 	type person struct {
 		name string
