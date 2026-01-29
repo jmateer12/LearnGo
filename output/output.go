@@ -6,6 +6,7 @@ package main
 import (
 	"fmt"
 	"log/slog"
+	"os"
 )
 
 var ErrUnder18 = fmt.Errorf("Under 18 Error")
@@ -31,12 +32,16 @@ func main() {
 	name := "Pete"
 	age := 17
 
-	//  Slog is used to produce logging information in a golang program which can produce nice logging info to the console
-	slog.SetLogLoggerLevel(slog.LevelDebug)
-	slog.Debug("Debug Message")
-	slog.Info("Info Message")
-	slog.Warn("Warn Warning")
-	slog.Error("Error message")
+	//  Slog is used to produce logging information in a golang program which can produce nice logging info to the consoles
+
+	logger := slog.New(
+		slog.NewJSONHandler(os.Stdout, nil),
+	)
+	//slog.SetLogLoggerLevel(slog.LevelDebug)
+	logger.Debug("Debug Message")
+	logger.Info("Info Message")
+	logger.Warn("Warn Warning")
+	logger.Error("Error message")
 
 	// Sprintf should be used for formatting in code somewhere else and save printing information in a variable
 	information := fmt.Sprintf("Name: %s, Age: %d", name, age)
